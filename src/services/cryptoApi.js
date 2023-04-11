@@ -22,7 +22,7 @@ export const cryptoApi = createApi({
 				limit,
 				offset
 			}) => ({
-				url: 'coins',
+				url: `coins?limit=${limit}`,
 				method: 'GET',
 				params: {
 					referenceCurrencyUuid,

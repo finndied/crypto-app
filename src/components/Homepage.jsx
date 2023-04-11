@@ -3,6 +3,7 @@ import millify from 'millify'
 import { Typography, Row, Col, Statistic } from 'antd'
 import { Link } from 'react-router-dom'
 import { useGetCryptosQuery } from '../services/cryptoApi'
+import {Cryptocurrencies, News} from '../components' 
 
 const { Title } = Typography
 
@@ -15,7 +16,7 @@ const Homepage = () => {
 		orderDirection: 'desc',
 		limit: '50',
 		offset: '0'
-	})
+	}, 10)
 
 	if (isLoading) return <div>Loading...</div>
 	if (error) return <div>Error: {error.message}</div>
@@ -45,6 +46,16 @@ const Homepage = () => {
 					<Statistic title='Total Markets' value={millify(data?.data?.stats?.totalMarkets)} />
 				</Col>
 			</Row>
+			<div className='home-heading-container'>
+				<Title level={3} className='home-title'>Top 10 Cryptocurrencies in the world</Title>
+				<Title level={5} className='show-more'><Link to='/cryptocurrencies'>Show More</Link></Title>
+			</div>
+			<Cryptocurrencies simplefied/>
+			<div className='home-heading-container'>
+				<Title level={3} className='home-title'>Latest Crypto News</Title>
+				<Title level={5} className='show-more'><Link to='/news'>Show More</Link></Title>
+			</div>
+			<News simplified/>
 		</>
 	)
 }
