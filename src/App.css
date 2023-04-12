@@ -190,6 +190,45 @@ table {
 	width: 250px;
 }
 
+.news-card {
+	min-height: 300px;
+}
+
+.news-image-container {
+	display: flex;
+	justify-content: space-between;
+}
+
+.news-title {
+	width: 70%;
+}
+
+.news-image-container img {
+	border-radius: 30px;
+	width: 100px;
+	height: 100px;
+}
+
+.news-card p {
+	color: black;
+	margin: 10px 0px;
+}
+
+.provider-container{
+	display: flex;
+	position: relative;
+	align-items: center;
+	/* justify-content: space-between; */
+}
+
+.provider-name{
+	margin-left: 10px;
+}
+
+.provider-time{
+	right: 0;
+	position: absolute;
+}
 /* .nav-container {
 	position: fixed;
 	left: 0;
