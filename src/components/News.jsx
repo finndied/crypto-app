@@ -12,9 +12,7 @@ const demoImage =
 	'https://www.bing.com/th?id=OVFT.mpzuVZnv8dwIMRfQGPbOPC&pid=News'
 
 const News = ({ simplified }) => {
-  const {
-		data
-	} = useGetCryptosQuery({
+	const { data } = useGetCryptosQuery({
 		referenceCurrencyUuid: 'yhjMzLPhuIDl',
 		timePeriod: '24h',
 		tiers: '1',
@@ -23,12 +21,11 @@ const News = ({ simplified }) => {
 		limit: 100,
 		offset: '0'
 	})
-  const [newsCategory, setNewsCategory] = useState('Cryptocurrency')
+	const [newsCategory, setNewsCategory] = useState('Cryptocurrency')
 	const { data: cryptoNews } = useGetNewsQuery({
 		newsCategory,
 		count: simplified ? 6 : 20
 	})
-	console.log(cryptoNews)
 	if (!cryptoNews?.value) return 'Loading...'
 
 	return (
@@ -45,9 +42,11 @@ const News = ({ simplified }) => {
 							option.children.toLowerCse().indexOf(input.toLowerCase()) >= 0
 						}
 					>
-            <Option value='Cryptocurrency'>Cryptocurrency</Option>
-            {data?.data?.coins.map((coin)=> <Option value={coin.name}>{coin.name}</Option>)}
-          </Select>
+						<Option value='Cryptocurrency'>Cryptocurrency</Option>
+						{data?.data?.coins.map(coin => (
+							<Option value={coin.name}>{coin.name}</Option>
+						))}
+					</Select>
 				</Col>
 			)}
 			{cryptoNews.value.map((news, i) => (

@@ -34,9 +34,17 @@ export const cryptoApi = createApi({
 					offset
 				}
 			})
+		}),
+		getCryptoDetails: builder.query({
+			query: ({ coinId }) => ({
+				url: `coin/${coinId}`,
+				method: 'GET',
+				params: {
+					coinId
+				}
+			})
 		})
 	})
 })
 
-export const { useGetCryptosQuery } = cryptoApi
-
+export const { useGetCryptosQuery, useGetCryptoDetailsQuery } = cryptoApi

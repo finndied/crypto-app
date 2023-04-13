@@ -214,20 +214,150 @@ table {
 	margin: 10px 0px;
 }
 
-.provider-container{
+.provider-container {
 	display: flex;
 	position: relative;
 	align-items: center;
 	/* justify-content: space-between; */
 }
 
-.provider-name{
+.provider-name {
 	margin-left: 10px;
 }
 
-.provider-time{
+.provider-time {
 	right: 0;
 	position: absolute;
+}
+
+.coin-detail-container {
+	margin: 30px;
+}
+
+.coin-heading-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	border-bottom: 1px solid black;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	gap: 10px;
+}
+
+.select-timeperiod {
+	width: 200px;
+	margin-top: 20px;
+}
+
+.coin-heading-container .coin-name {
+	font-weight: 900;
+}
+
+.coin-heading-container p {
+	font-size: 1rem;
+	opacity: 0.9;
+	margin-bottom: 20px;
+}
+
+.stats-container {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	gap: 40px;
+}
+
+.stats-container h2 {
+	font-weight: 700;
+	font-size: 1.4rem;
+	margin-top: 20px;
+	color: pink;
+}
+
+.coin-details-heading {
+	font-weight: 700;
+	margin-top: 20px;
+}
+
+.coin-stats {
+	display: flex;
+	justify-content: space-between;
+	font-size: 1rem;
+	opacity: 0.9;
+	padding: 20px;
+}
+
+.coin-stats-name {
+	display: flex;
+	gap: 10px;
+	font-size: 1rem;
+}
+
+.stats {
+	font-weight: 500;
+}
+
+.coin-value-statistics-heading p {
+	font-size: 1rem;
+	opacity: 0.9;
+}
+
+.coin-desc-link {
+	display: flex;
+	gap: 40px;
+	margin-top: 40px;
+	padding-top: 20px;
+}
+
+.coin-desc-link h2 {
+	font-weight: 700;
+	color: pink;
+}
+
+.coin-desc-link p {
+	font-size: 18px;
+	opacity: 0.9;
+}
+
+.coin-desc-link a {
+	color: pink;
+}
+
+.coin-desc-link h3 {
+	font-weight: 400;
+}
+
+.coin-desc {
+	flex: 0.5;
+}
+
+.coin-links {
+	padding: 0px 20px;
+	flex: 0.5;
+}
+
+.coin-link {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.226);
+	padding: 20px;
+}
+
+.link-name {
+	text-transform: capitalize;
+	font-size: 1rem;
+}
+
+.coin-link a {
+	color: rgb(41, 78, 165);
+	font-weight: 700;
+	font-size: 1rem;
+}
+
+.coin-link:hover,
+.coin-stats:hover {
+	/* background-color: var(--bgSecondary); */
 }
 /* .nav-container {
 	position: fixed;

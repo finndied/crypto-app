@@ -20,7 +20,6 @@ const Cryptocurrencies = ({ simplefied }) => {
 		limit: count,
 		offset: '0'
 	})
-
 	const [cryptos, setCryptos] = useState([])
 	const [searchTerm, setSearchTerm] = useState('')
 
@@ -37,7 +36,7 @@ const Cryptocurrencies = ({ simplefied }) => {
 
 	if (isLoading) return <div>Loading...</div>
 	if (error) return <div>Error: {error.message}</div>
-
+	
 	return (
 		<>
 			{!simplefied && (
@@ -57,7 +56,7 @@ const Cryptocurrencies = ({ simplefied }) => {
 						className='crypto-card'
 						key={currency.uuid}
 					>
-						<Link to={`/crypto/${currency.id}`}>
+						<Link to={`/crypto/${currency.uuid}`}>
 							<Card
 								title={`${currency.rank}. ${currency.name}`}
 								extra={<img className='crypto-image' src={currency.iconUrl} />}
