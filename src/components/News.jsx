@@ -33,6 +33,8 @@ const News = ({ simplified }) => {
 			{!simplified && (
 				<Col span={24}>
 					<Select
+						allowClear 
+						disabled={false}
 						showSearch
 						className='select-news'
 						placeholder='Select a Crypto'

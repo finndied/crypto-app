@@ -121,6 +121,10 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+a:hover {
+	color: #0071bd;
+}
+
 .App {
 	display: flex;
 	overflow: hidden;
@@ -137,7 +141,6 @@ table {
 }
 .routes {
 	padding: 20px;
-	height: 100%;
 }
 .nav-container {
 	position: fixed;
@@ -149,7 +152,6 @@ table {
 }
 
 .logo-container {
-	flex-direction: column;
 	background-color: #001529;
 	display: flex;
 	padding: 20px;
@@ -162,72 +164,80 @@ table {
 .logo a {
 	color: white;
 }
-
-.home-heading-container {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	margin-top: 40px;
-}
-.show-more {
-	margin-top: 0px !important;
-}
-
-.crypto-card-container {
-	min-height: 65vh !important;
-}
-
-.crypto-card {
-	min-width: 250px;
-}
-
-.crypto-card .crypto-image {
-	width: 35px;
-}
-
-.search-crypto {
-	margin: 20px 0 30px 0;
-	width: 250px;
-}
-
-.news-card {
-	min-height: 300px;
-}
-
-.news-image-container {
-	display: flex;
-	justify-content: space-between;
-}
-
-.news-title {
-	width: 70%;
-}
-
-.news-image-container img {
-	border-radius: 30px;
-	width: 100px;
-	height: 100px;
-}
-
-.news-card p {
-	color: black;
-	margin: 10px 0px;
-}
-
-.provider-container {
-	display: flex;
-	position: relative;
-	align-items: center;
-	/* justify-content: space-between; */
-}
-
-.provider-name {
-	margin-left: 10px;
-}
-
-.provider-time {
-	right: 0;
+.menu-control-container {
+	display: none;
 	position: absolute;
+	right: 10px;
+	top: 25px;
+	font-size: 1rem;
+	background-color: white;
+	border: none;
+}
+
+.loader {
+	height: 81vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@media screen and (max-width: 1300px) {
+	.main {
+		margin-left: 50px;
+	}
+}
+
+@media screen and (max-width: 1170px) {
+	.main {
+		margin-left: 50px;
+	}
+}
+
+@media screen and (max-width: 1000px) {
+	.main {
+		margin-left: 100px;
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.App {
+		flex-direction: column;
+		overflow: hidden;
+	}
+
+	.navbar {
+		flex: 0;
+	}
+
+	.main {
+		flex: 1;
+		margin-top: 90px;
+		margin-left: 0px;
+		margin-right: 10px;
+	}
+
+	.nav-container {
+		height: 8vh;
+		position: fixed;
+		width: 100%;
+		z-index: 100;
+		background-color: #F9F9F9;
+	}
+
+	.menu-control-container {
+		display: block;
+	}
+
+	.ant-menu {
+		position: absolute;
+		right: 0px;
+	}
+	.home-title {
+		font-size: 1.4rem;
+	}
+	.show-more {
+		font-size: 1.3rem;
+	}
 }
 
 .coin-detail-container {
@@ -239,19 +249,15 @@ table {
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	border-bottom: 1px solid black;
+	border-bottom: 1px solid #d9d9d9;
 	padding-top: 20px;
 	padding-bottom: 20px;
 	gap: 10px;
 }
 
-.select-timeperiod {
-	width: 200px;
-	margin-top: 20px;
-}
-
 .coin-heading-container .coin-name {
 	font-weight: 900;
+	color: #0071bd;
 }
 
 .coin-heading-container p {
@@ -262,7 +268,7 @@ table {
 
 .stats-container {
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-between;
 	align-items: center;
 	gap: 40px;
 }
@@ -271,17 +277,19 @@ table {
 	font-weight: 700;
 	font-size: 1.4rem;
 	margin-top: 20px;
-	color: pink;
+	color: #0071bd;
 }
 
 .coin-details-heading {
 	font-weight: 700;
 	margin-top: 20px;
+	color: #0071bd;
 }
 
 .coin-stats {
 	display: flex;
 	justify-content: space-between;
+	border-bottom: 1px solid #d9d9d9;
 	font-size: 1rem;
 	opacity: 0.9;
 	padding: 20px;
@@ -294,7 +302,7 @@ table {
 }
 
 .stats {
-	font-weight: 500;
+	font-weight: 800;
 }
 
 .coin-value-statistics-heading p {
@@ -311,20 +319,20 @@ table {
 
 .coin-desc-link h2 {
 	font-weight: 700;
-	color: pink;
+	color: #0071bd;
 }
 
 .coin-desc-link p {
-	font-size: 18px;
+	font-size: 1rem;
 	opacity: 0.9;
 }
 
 .coin-desc-link a {
-	color: pink;
+	color: #0071bd;
 }
 
 .coin-desc-link h3 {
-	font-weight: 400;
+	font-weight: 700;
 }
 
 .coin-desc {
@@ -340,7 +348,7 @@ table {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	border-bottom: 1px solid rgba(0, 0, 0, 0.226);
+	border-bottom: 1px solid #d9d9d9;
 	padding: 20px;
 }
 
@@ -350,38 +358,123 @@ table {
 }
 
 .coin-link a {
-	color: rgb(41, 78, 165);
+	color: #0071bd;
 	font-weight: 700;
 	font-size: 1rem;
 }
 
 .coin-link:hover,
 .coin-stats:hover {
-	/* background-color: var(--bgSecondary); */
-}
-/* .nav-container {
-	position: fixed;
-	left: 0;
-	margin: 10px;
-	height: 100vh;
-	margin: 0px;
-	background-color: rgb(154, 210, 121);
+	background-color: #F9F9F9;
 }
 
-.logo-container {
+@media screen and (max-width: 1000px) {
+	.stats-container {
+		flex-direction: column;
+	}
+	.coin-desc-link {
+		flex-direction: column;
+	}
+	.stats-container h2 {
+		margin-top: 0px;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.coin-links {
+		padding: 0px;
+	}
+	.coin-detail-container {
+		margin: 0;
+	}
+}
+@media screen and (max-width: 500px) {
+	.heading {
+		margin-top: 20px;
+	}
+}
+
+.select-news {
+	width: 180px;
+}
+.news-card {
+	min-height: 300px;
+}
+.news-image-container {
 	display: flex;
-	padding: 20px;
+	justify-content: space-between;
 }
-.logo {
-	margin: 0 0 0 15px;
-}
-.logo a {
-	color: white;
+.news-title {
+	width: 70%;
 }
 
-.logo a:hover {
-	color: rgb(38, 38, 39);
-} */
+.news-image-container img {
+	border-radius: 30px;
+	width: 100px;
+	height: 100px;
+}
+.news-card p {
+	color: black;
+	margin: 10px 0px;
+}
+.provider-container {
+	display: flex;
+	position: relative;
+	align-items: center;
+}
+
+.provider-name {
+	margin-left: 10px;
+}
+
+.provider-time {
+	right: 0;
+	position: absolute;
+}
+
+.chart-header {
+	display: flex;
+	justify-content: space-between;
+	gap: 20px;
+	color: #0071bd;
+}
+.chart-title {
+	color: #0071bd;
+}
+
+.price-change {
+	font-weight: 900;
+}
+.current-price {
+	font-weight: 100;
+}
+.home-heading-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 40px;
+}
+
+.exchange-image {
+	margin: 0px 10px;
+}
+.search-crypto {
+	margin: 20px auto 30px auto;
+	width: 250px;
+}
+.crypto-card-container {
+	min-height: 65vh;
+}
+.crypto-card {
+	min-width: 250px;
+}
+.crypto-card .crypto-image {
+	width: 35px;
+}
+.select-timeperiod {
+	width: 200px;
+	margin-top: 20px;
+}
 
 .footer {
 	background-color: #001529;
